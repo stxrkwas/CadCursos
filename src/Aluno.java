@@ -113,25 +113,22 @@ public class Aluno extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jFormattedTextField1 = new javax.swing.JFormattedTextField();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         alunoimg_lbl = new javax.swing.JLabel();
         nome_lbl = new javax.swing.JLabel();
         txtNome = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        txtDataNasc = new javax.swing.JTextField();
         gen_lbl = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         dtmat_lbl = new javax.swing.JLabel();
         txtGen = new javax.swing.JTextField();
         txtEndereco = new javax.swing.JTextField();
-        txtTel = new javax.swing.JTextField();
         txtDataMat = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         aluno = new javax.swing.JTable();
-        cod_lbl = new javax.swing.JLabel();
-        txtCod = new javax.swing.JTextField();
         backbtn = new javax.swing.JLabel();
         PrimeiroRegistro = new javax.swing.JLabel();
         VoltarUmRegistro = new javax.swing.JLabel();
@@ -141,6 +138,12 @@ public class Aluno extends javax.swing.JFrame {
         editar_btn = new javax.swing.JLabel();
         save_btn = new javax.swing.JLabel();
         delete_btn = new javax.swing.JLabel();
+        cod_lbl = new javax.swing.JLabel();
+        txtCod = new javax.swing.JTextField();
+        txtDataNasc = new javax.swing.JTextField();
+        txtTel = new javax.swing.JFormattedTextField();
+
+        jFormattedTextField1.setText("jFormattedTextField1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -164,9 +167,6 @@ public class Aluno extends javax.swing.JFrame {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel2.setText("Data de nascimento:");
 
-        txtDataNasc.setFont(new java.awt.Font("Gadugi", 0, 12)); // NOI18N
-        txtDataNasc.setToolTipText("Inserir a data de nascimento");
-
         gen_lbl.setFont(new java.awt.Font("Gadugi", 1, 16)); // NOI18N
         gen_lbl.setText("Gênero:");
 
@@ -184,9 +184,6 @@ public class Aluno extends javax.swing.JFrame {
 
         txtEndereco.setFont(new java.awt.Font("Gadugi", 0, 12)); // NOI18N
         txtEndereco.setToolTipText("Inserir o endereço");
-
-        txtTel.setFont(new java.awt.Font("Gadugi", 0, 12)); // NOI18N
-        txtTel.setToolTipText("Inserir o telefone");
 
         txtDataMat.setFont(new java.awt.Font("Gadugi", 0, 12)); // NOI18N
         txtDataMat.setToolTipText("Inserir a data de matrícula");
@@ -222,12 +219,6 @@ public class Aluno extends javax.swing.JFrame {
             }
         });
         jScrollPane1.setViewportView(aluno);
-
-        cod_lbl.setFont(new java.awt.Font("Gadugi", 1, 16)); // NOI18N
-        cod_lbl.setText("Código:");
-
-        txtCod.setFont(new java.awt.Font("Gadugi", 0, 12)); // NOI18N
-        txtCod.setToolTipText("Inserir o código");
 
         backbtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         backbtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Fasticon-Essential-Toolbar-Undo.32.png"))); // NOI18N
@@ -305,6 +296,17 @@ public class Aluno extends javax.swing.JFrame {
             }
         });
 
+        cod_lbl.setFont(new java.awt.Font("Gadugi", 1, 16)); // NOI18N
+        cod_lbl.setText("Código: ");
+
+        txtCod.setEditable(false);
+
+        try {
+            txtTel.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) #####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -316,13 +318,13 @@ public class Aluno extends javax.swing.JFrame {
                         .addGap(56, 56, 56)
                         .addComponent(alunoimg_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(86, 86, 86)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(txtTel, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(txtTel))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(dtmat_lbl)
                                         .addGap(18, 18, 18)
@@ -345,17 +347,17 @@ public class Aluno extends javax.swing.JFrame {
                                     .addComponent(delete_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtDataNasc, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtDataNasc))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(nome_lbl)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(cod_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtCod, javax.swing.GroupLayout.PREFERRED_SIZE, 445, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 40, Short.MAX_VALUE)))
+                                .addComponent(cod_lbl)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtCod)))
+                        .addGap(0, 46, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -382,7 +384,7 @@ public class Aluno extends javax.swing.JFrame {
                 .addComponent(backbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cod_lbl)
                     .addComponent(txtCod, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -411,21 +413,20 @@ public class Aluno extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(txtTel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21)
+                .addGap(25, 25, 25)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(dtmat_lbl)
                     .addComponent(txtDataMat, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(24, 24, 24)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(editar_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(save_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(create_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(UltimoRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(ProximoRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(VoltarUmRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(PrimeiroRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(delete_btn))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(delete_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(editar_btn, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+                    .addComponent(save_btn, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+                    .addComponent(create_btn, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+                    .addComponent(UltimoRegistro, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+                    .addComponent(ProximoRegistro, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+                    .addComponent(VoltarUmRegistro, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+                    .addComponent(PrimeiroRegistro, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34))
@@ -445,22 +446,235 @@ public class Aluno extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void alunoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_alunoMouseClicked
-       
-        //Evento para o clique do mouse sobre o registro da tabela:
-        int linha_selecionada = aluno.getSelectedRow();
-        txtCod.setText(aluno.getValueAt(linha_selecionada, 0).toString());
-        txtNome.setText(aluno.getValueAt(linha_selecionada, 1).toString());
-        txtDataNasc.setText(aluno.getValueAt(linha_selecionada, 2).toString());
-        txtGen.setText(aluno.getValueAt(linha_selecionada, 3).toString());
-        txtEndereco.setText(aluno.getValueAt(linha_selecionada, 4).toString());
-        txtTel.setText(aluno.getValueAt(linha_selecionada, 5).toString());
-        txtDataMat.setText(aluno.getValueAt(linha_selecionada, 6).toString());
-        
-    }//GEN-LAST:event_alunoMouseClicked
+    private void delete_btnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_delete_btnMouseClicked
+
+        String sql = "";
+
+        try{
+
+            int resposta = JOptionPane.showConfirmDialog(rootPane, "Deseja excluir o registro: ", "Confirmar exclusão", JOptionPane.YES_NO_OPTION, 3);
+
+            if(resposta == 0){
+
+                sql = "delete from aluno where IdAluno = " + txtCod.getText();
+                int excluir = con_cliente.statement.executeUpdate(sql);
+
+                if(excluir == 1){
+
+                    JOptionPane.showMessageDialog(null, "Exclusão realizada com sucesso!", "Mensagem do programa", JOptionPane.INFORMATION_MESSAGE);
+                    con_cliente.executaSQL("select * from aluno order by IdAluno");
+                    con_cliente.resultset.first();
+                    preencherTabela();
+                    posicionarRegistro();
+
+                }
+
+                else{
+
+                    JOptionPane.showMessageDialog(null, "Operação cancela pelo usuário!", "Mensagem do programa", JOptionPane.INFORMATION_MESSAGE);
+
+                }
+            }
+        }
+
+        catch(SQLException excecao){
+
+            JOptionPane.showMessageDialog(null, "Erro na exclusão: "  + excecao, "Mensagem do programa", JOptionPane.INFORMATION_MESSAGE);
+
+        }
+
+    }//GEN-LAST:event_delete_btnMouseClicked
+
+    private void save_btnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_save_btnMouseClicked
+
+        //Criando strings para armazenar os dados digitados nos campos de texto
+        String nome = txtNome.getText();
+        String datanasc = txtDataNasc.getText();
+        String genero = txtGen.getText();
+        String endereco = txtEndereco.getText();
+        String telefone = txtTel.getText();
+        String matricula = txtDataMat.getText();
+
+        //
+        try{
+
+            String insert_sql = "insert into aluno (NomeAluno, DataNasc, Genero, Endereco, Telefone, DataMatricula) values ('"+ nome + "', "
+            + "'" + datanasc + "', '" + genero + "', '" + endereco + "', '" + telefone + "', '" + matricula + "')";
+            con_cliente.statement.executeUpdate(insert_sql);
+            JOptionPane.showMessageDialog(null, "Gravação realizada com sucesso!", "Mensagem do programa", JOptionPane.INFORMATION_MESSAGE);
+            con_cliente.executaSQL("select * from aluno order by IdAluno");
+            con_cliente.resultset.first();
+            preencherTabela();
+            mostrar_Dados();
+
+        }
+
+        catch(SQLException errosql){
+
+            JOptionPane.showMessageDialog(null, "Erro de gravação :\n " + errosql, "Mensagem do programa ", JOptionPane.INFORMATION_MESSAGE);
+        }
+
+    }//GEN-LAST:event_save_btnMouseClicked
+
+    private void editar_btnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editar_btnMouseClicked
+
+        //Criando strings para armazenar os dados digitados nos campos de texto
+        String nome = txtNome.getText();
+        String datanasc = txtDataNasc.getText();
+        String genero = txtGen.getText();
+        String endereco = txtEndereco.getText();
+        String telefone = txtTel.getText();
+        String matricula = txtDataMat.getText();
+
+        //
+        String sql = "";
+
+        //
+        String msg = "";
+
+        try{
+
+            if(txtCod.getText().equals("")){
+
+                sql = "insert into aluno (NomeAluno, DataNasc, Genero, Endereco, Telefone, DataMatricula) values (" + nome + "', '" + datanasc + "', '" + genero + "', '" +
+                endereco + "', '" +  telefone + "', '" + matricula + "' where IdAluno = " + txtCod.getText();
+                msg = "Gravação de um novo registro";
+
+            }
+
+            else{
+
+                sql = "update aluno set NomeAluno = '" + nome + "', DataNasc = '" + datanasc + "', Genero = '" + genero + "', Endereco = '" + endereco + "', Telefone = '" +
+                telefone + "', DataMatricula = '" + matricula + "' where IdAluno = " + txtCod.getText();
+                msg = "Alteração de registro ";
+
+            }
+
+            con_cliente.statement.executeUpdate(sql);
+            JOptionPane.showMessageDialog(null, msg + "realizada com sucesso!", "Mensagem do programa ", JOptionPane.INFORMATION_MESSAGE);
+
+            con_cliente.executaSQL("select * from aluno order by IdAluno");
+            con_cliente.resultset.first();
+            preencherTabela();
+            mostrar_Dados();
+        }
+
+        catch(SQLException errosql){
+
+            JOptionPane.showMessageDialog(null, "Erro de gravação :\n " + errosql, "Mensagem do programa ", JOptionPane.INFORMATION_MESSAGE);
+        }
+
+    }
+
+        private void saveActionPerformed(java.awt.event.ActionEvent evt) {
+
+            //Criando strings para armazenar os dados digitados nos campos de texto
+            //String codigo = txtCod.getText();
+            String nome = txtNome.getText();
+            String datanasc = txtDataNasc.getText();
+            String genero = txtGen.getText();
+            String endereco = txtEndereco.getText();
+            String telefone = txtTel.getText();
+            String matricula = txtDataMat.getText();
+
+            //
+            try{
+
+                // Removendo IdAluno, '" + codigo + "',
+                String insert_sql = "insert into aluno (NomeAluno, DataNasc, Genero, Endereco, Telefone, DataMatricula) values ('" + nome + "', '" +
+                datanasc + "', '" + genero + "', '" + endereco + "', '" + telefone + "', '" + matricula + "')";
+                con_cliente.statement.executeUpdate(insert_sql);
+                JOptionPane.showMessageDialog(null, "Gravação realizada com sucesso!", "Mensagem do programa", JOptionPane.INFORMATION_MESSAGE);
+                con_cliente.executaSQL("select * from aluno order by IdAluno");
+                con_cliente.resultset.first();
+                preencherTabela();
+                mostrar_Dados();
+
+            }
+
+            catch(SQLException errosql){
+
+                JOptionPane.showMessageDialog(null, "Erro de gravação :\n " + errosql, "Mensagem do programa ", JOptionPane.INFORMATION_MESSAGE);
+            }
+
+    }//GEN-LAST:event_editar_btnMouseClicked
+
+    private void create_btnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_create_btnMouseClicked
+
+        //Limpa as caixas de texto
+        txtCod.setText(null);
+        txtNome.setText("");
+        txtDataNasc.setText("");
+        txtGen.setText("");
+        txtEndereco.setText("");
+        txtTel.setText("");
+        txtDataMat.setText("");
+
+    }//GEN-LAST:event_create_btnMouseClicked
+
+    private void UltimoRegistroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UltimoRegistroMouseClicked
+
+        try{
+            con_cliente.resultset.last();
+            mostrar_Dados();
+        }
+
+        catch(SQLException erro){
+            JOptionPane.showMessageDialog(null, "Não foi possível acessar o último registro: " + erro, "Mensagem do programa ", JOptionPane.INFORMATION_MESSAGE);
+        }
+
+    }//GEN-LAST:event_UltimoRegistroMouseClicked
+
+    private void ProximoRegistroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ProximoRegistroMouseClicked
+
+        try{
+            con_cliente.resultset.next();
+            mostrar_Dados();
+        }
+
+        catch(SQLException erro){
+            JOptionPane.showMessageDialog(null, "Não foi possível acessar o próximo registro: " + erro, "Mensagem do programa ", JOptionPane.INFORMATION_MESSAGE);
+        }
+
+    }//GEN-LAST:event_ProximoRegistroMouseClicked
+
+    private void VoltarUmRegistroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VoltarUmRegistroMouseClicked
+
+        try{
+            con_cliente.resultset.previous();
+            mostrar_Dados();
+        }
+
+        catch(SQLException erro){
+            JOptionPane.showMessageDialog(null, "Não foi possível acessar o registro anterior: " + erro, "Mensagem do programa ", JOptionPane.INFORMATION_MESSAGE);
+        }
+
+    }//GEN-LAST:event_VoltarUmRegistroMouseClicked
+
+    private void PrimeiroRegistroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PrimeiroRegistroMouseClicked
+
+        try{
+            con_cliente.resultset.first();
+            mostrar_Dados();
+        }
+
+        catch(SQLException erro){
+            JOptionPane.showMessageDialog(null, "Não foi possível acessar o primeiro registro: " + erro, "Mensagem do programa ", JOptionPane.INFORMATION_MESSAGE);
+        }
+
+    }//GEN-LAST:event_PrimeiroRegistroMouseClicked
+
+    private void backbtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backbtnMouseClicked
+
+        //Abrir a tela do curso e fechar a tela de menu.
+        Menu menu = new Menu();
+        menu.setVisible(true);
+        dispose();
+
+    }//GEN-LAST:event_backbtnMouseClicked
 
     private void alunoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_alunoKeyPressed
-        
+
         //Evento que sincroniza a grid com as setas do teclado:
         int linha_selecionada = aluno.getSelectedRow();
         txtCod.setText(aluno.getValueAt(linha_selecionada, 0).toString());
@@ -472,231 +686,19 @@ public class Aluno extends javax.swing.JFrame {
         txtDataMat.setText(aluno.getValueAt(linha_selecionada, 6).toString());
     }//GEN-LAST:event_alunoKeyPressed
 
-    private void backbtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backbtnMouseClicked
-        
-        //Abrir a tela do curso e fechar a tela de menu.
-        Menu menu = new Menu();
-        menu.setVisible(true);
-        dispose();
-        
-    }//GEN-LAST:event_backbtnMouseClicked
+    private void alunoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_alunoMouseClicked
 
-    private void PrimeiroRegistroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PrimeiroRegistroMouseClicked
-        
-        try{
-            con_cliente.resultset.first();
-            mostrar_Dados();
-        }
-        
-        catch(SQLException erro){
-            JOptionPane.showMessageDialog(null, "Não foi possível acessar o primeiro registro: " + erro, "Mensagem do programa ", JOptionPane.INFORMATION_MESSAGE);
-        }
-        
-    }//GEN-LAST:event_PrimeiroRegistroMouseClicked
+        //Evento para o clique do mouse sobre o registro da tabela:
+        int linha_selecionada = aluno.getSelectedRow();
+        txtCod.setText(aluno.getValueAt(linha_selecionada, 0).toString());
+        txtNome.setText(aluno.getValueAt(linha_selecionada, 1).toString());
+        txtDataNasc.setText(aluno.getValueAt(linha_selecionada, 2).toString());
+        txtGen.setText(aluno.getValueAt(linha_selecionada, 3).toString());
+        txtEndereco.setText(aluno.getValueAt(linha_selecionada, 4).toString());
+        txtTel.setText(aluno.getValueAt(linha_selecionada, 5).toString());
+        txtDataMat.setText(aluno.getValueAt(linha_selecionada, 6).toString());
 
-    private void VoltarUmRegistroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VoltarUmRegistroMouseClicked
-        
-        try{
-            con_cliente.resultset.previous();
-            mostrar_Dados();
-        }
-        
-        catch(SQLException erro){
-            JOptionPane.showMessageDialog(null, "Não foi possível acessar o registro anterior: " + erro, "Mensagem do programa ", JOptionPane.INFORMATION_MESSAGE);
-        }
-        
-    }//GEN-LAST:event_VoltarUmRegistroMouseClicked
-
-    private void ProximoRegistroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ProximoRegistroMouseClicked
-        
-        try{
-            con_cliente.resultset.next();
-            mostrar_Dados();
-        }
-        
-        catch(SQLException erro){
-            JOptionPane.showMessageDialog(null, "Não foi possível acessar o próximo registro: " + erro, "Mensagem do programa ", JOptionPane.INFORMATION_MESSAGE);
-        }
-        
-    }//GEN-LAST:event_ProximoRegistroMouseClicked
-
-    private void UltimoRegistroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UltimoRegistroMouseClicked
-        
-        try{
-            con_cliente.resultset.last();
-            mostrar_Dados();
-        }
-        
-        catch(SQLException erro){
-            JOptionPane.showMessageDialog(null, "Não foi possível acessar o último registro: " + erro, "Mensagem do programa ", JOptionPane.INFORMATION_MESSAGE);
-        }
-        
-    }//GEN-LAST:event_UltimoRegistroMouseClicked
-
-    private void create_btnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_create_btnMouseClicked
-        
-        //Limpa as caixas de texto
-        txtCod.setText("");
-        txtNome.setText("");
-        txtDataNasc.setText("");
-        txtGen.setText("");
-        txtEndereco.setText("");
-        txtTel.setText("");
-        txtDataMat.setText("");
-        
-    }//GEN-LAST:event_create_btnMouseClicked
-
-    private void editar_btnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editar_btnMouseClicked
-        
-        //Criando strings para armazenar os dados digitados nos campos de texto
-        String nome = txtNome.getText();
-        String datanasc = txtDataNasc.getText();
-        String genero = txtGen.getText();
-        String endereco = txtEndereco.getText();
-        String telefone = txtTel.getText();
-        String matricula = txtDataMat.getText();
-
-        //
-        String sql = "";
-        
-        //
-        String msg = "";
-        
-        try{
-            
-            if(txtCod.getText().equals("")){
-                
-                sql = "insert into aluno (NomeAluno, DataNasc, Genero, Endereco, Telefone, DataMatricula) values (" + nome + "', '" + datanasc + "', '" + genero + "', '" + 
-                        endereco + "', '" +  telefone + "', '" + matricula + "' where IdAluno = " + txtCod.getText();
-                msg = "Gravação de um novo registro";
-            
-            }
-            
-            else{
-                
-                sql = "update aluno set NomeAluno = '" + nome + "', DataNasc = '" + datanasc + "', Genero = '" + genero + "', Endereco = '" + endereco + "', Telefone = '" + 
-                        telefone + "', DataMatricula = '" + matricula + "' where IdAluno = " + txtCod.getText();
-                msg = "Alteração de registro ";
-            
-            }
-            
-            con_cliente.statement.executeUpdate(sql);
-            JOptionPane.showMessageDialog(null, msg + "realizada com sucesso!", "Mensagem do programa ", JOptionPane.INFORMATION_MESSAGE);
-            
-            con_cliente.executaSQL("select * from aluno order by IdAluno");
-            con_cliente.resultset.first();
-            preencherTabela();
-            mostrar_Dados();
-        }
-        
-        catch(SQLException errosql){
-            
-            JOptionPane.showMessageDialog(null, "Erro de gravação :\n " + errosql, "Mensagem do programa ", JOptionPane.INFORMATION_MESSAGE);
-        }
-        
-    
-    }                                      
-
-    private void saveActionPerformed(java.awt.event.ActionEvent evt) {                                     
-        
-        //Criando strings para armazenar os dados digitados nos campos de texto
-        String codigo = txtCod.getText();
-        String nome = txtNome.getText();
-        String datanasc = txtDataNasc.getText();
-        String genero = txtGen.getText();
-        String endereco = txtEndereco.getText();
-        String telefone = txtTel.getText();
-        String matricula = txtDataMat.getText();
-        
-        //
-        try{
-            
-            String insert_sql = "insert into aluno (IdAluno, NomeAluno, DataNasc, Genero, Endereco, Telefone, DataMatricula) values ('" + codigo + "', '" + nome + "', '" + datanasc + "', '" + genero + "', '" + endereco + "', '" + telefone + "', '" + matricula + "')";
-            con_cliente.statement.executeUpdate(insert_sql);
-            JOptionPane.showMessageDialog(null, "Gravação realizada com sucesso!", "Mensagem do programa", JOptionPane.INFORMATION_MESSAGE);
-            con_cliente.executaSQL("select * from aluno order by IdAluno");
-            con_cliente.resultset.first();
-            preencherTabela();
-            mostrar_Dados();
-            
-        }
-        
-        catch(SQLException errosql){
-            
-            JOptionPane.showMessageDialog(null, "Erro de gravação :\n " + errosql, "Mensagem do programa ", JOptionPane.INFORMATION_MESSAGE);
-        }
-        
-    }//GEN-LAST:event_editar_btnMouseClicked
-
-    private void save_btnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_save_btnMouseClicked
-
-        //Criando strings para armazenar os dados digitados nos campos de texto
-        String codigo = txtCod.getText();
-        String nome = txtNome.getText();
-        String datanasc = txtDataNasc.getText();
-        String genero = txtGen.getText();
-        String endereco = txtEndereco.getText();
-        String telefone = txtTel.getText();
-        String matricula = txtDataMat.getText();
-        
-        //
-        try{
-            
-            String insert_sql = "insert into aluno (IdAluno, NomeAluno, DataNasc, Genero, Endereco, Telefone, DataMatricula) values ('" + codigo + "', '" + nome + "', '" + datanasc + "', '" + genero + "', '" + endereco + "', '" + telefone + "', '" + matricula + "')";
-            con_cliente.statement.executeUpdate(insert_sql);
-            JOptionPane.showMessageDialog(null, "Gravação realizada com sucesso!", "Mensagem do programa", JOptionPane.INFORMATION_MESSAGE);
-            con_cliente.executaSQL("select * from aluno order by IdAluno");
-            con_cliente.resultset.first();
-            preencherTabela();
-            mostrar_Dados();
-            
-        }
-        
-        catch(SQLException errosql){
-            
-            JOptionPane.showMessageDialog(null, "Erro de gravação :\n " + errosql, "Mensagem do programa ", JOptionPane.INFORMATION_MESSAGE);
-        }
-        
-    }//GEN-LAST:event_save_btnMouseClicked
-
-    private void delete_btnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_delete_btnMouseClicked
-       
-        String sql = "";
-        
-        try{
-            
-            int resposta = JOptionPane.showConfirmDialog(rootPane, "Deseja excluir o registro: ", "Confirmar exclusão", JOptionPane.YES_NO_OPTION, 3);
-            
-            if(resposta == 0){
-                
-                sql = "delete from aluno where IdAluno = " + txtCod.getText();
-                int excluir = con_cliente.statement.executeUpdate(sql);
-                
-                if(excluir == 1){
-                    
-                    JOptionPane.showMessageDialog(null, "Exclusão realizada com sucesso!", "Mensagem do programa", JOptionPane.INFORMATION_MESSAGE);
-                    con_cliente.executaSQL("select * from aluno order by IdAluno");
-                    con_cliente.resultset.first();
-                    preencherTabela();
-                    posicionarRegistro();
-                    
-                }
-                
-                else{
-                    
-                    JOptionPane.showMessageDialog(null, "Operação cancela pelo usuário!", "Mensagem do programa", JOptionPane.INFORMATION_MESSAGE);
-                    
-                }
-            }
-        }
-        
-        catch(SQLException excecao){
-            
-            JOptionPane.showMessageDialog(null, "Erro na exclusão: "  + excecao, "Mensagem do programa", JOptionPane.INFORMATION_MESSAGE);
-        
-        }
-        
-    }//GEN-LAST:event_delete_btnMouseClicked
+    }//GEN-LAST:event_alunoMouseClicked
 
     /**
      * @param args the command line arguments
@@ -747,6 +749,7 @@ public class Aluno extends javax.swing.JFrame {
     private javax.swing.JLabel dtmat_lbl;
     private javax.swing.JLabel editar_btn;
     private javax.swing.JLabel gen_lbl;
+    private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
@@ -761,7 +764,7 @@ public class Aluno extends javax.swing.JFrame {
     private javax.swing.JTextField txtEndereco;
     private javax.swing.JTextField txtGen;
     private javax.swing.JTextField txtNome;
-    private javax.swing.JTextField txtTel;
+    private javax.swing.JFormattedTextField txtTel;
     // End of variables declaration//GEN-END:variables
 
 }

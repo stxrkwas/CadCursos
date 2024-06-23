@@ -105,7 +105,8 @@ public class Professor extends javax.swing.JFrame {
         
         catch(SQLException erro){
             
-            JOptionPane.showMessageDialog(null, "Não localizou dados: "+erro, "Mensagem do programa", JOptionPane.INFORMATION_MESSAGE);
+            /*JOptionPane.showMessageDialog(null, "Não localizou dados: "+
+            erro, "Mensagem do programa", JOptionPane.INFORMATION_MESSAGE);*/
         }
     }
     /**
@@ -134,13 +135,8 @@ public class Professor extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         txtCod = new javax.swing.JTextField();
         txtNome = new javax.swing.JTextField();
-        txtDataNasc = new javax.swing.JTextField();
         txtGen = new javax.swing.JTextField();
         txtEndereco = new javax.swing.JTextField();
-        txtTel = new javax.swing.JTextField();
-        txtEmail = new javax.swing.JTextField();
-        txtVHA = new javax.swing.JTextField();
-        txtDataCon = new javax.swing.JTextField();
         PrimeiroRegistro = new javax.swing.JLabel();
         VoltarUmRegistro = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -151,6 +147,11 @@ public class Professor extends javax.swing.JFrame {
         save_btn = new javax.swing.JLabel();
         edit_btn = new javax.swing.JLabel();
         criar_btn = new javax.swing.JLabel();
+        txtDataNasc = new javax.swing.JFormattedTextField();
+        txtTel = new javax.swing.JFormattedTextField();
+        txtDataCon = new javax.swing.JFormattedTextField();
+        txtEmail = new javax.swing.JTextField();
+        txtVHA = new javax.swing.JTextField();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -166,7 +167,6 @@ public class Professor extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1005, 800));
         setResizable(false);
         setSize(new java.awt.Dimension(1005, 820));
 
@@ -214,32 +214,18 @@ public class Professor extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Gadugi", 1, 16)); // NOI18N
         jLabel9.setText("Data de contratação: ");
 
+        txtCod.setEditable(false);
         txtCod.setFont(new java.awt.Font("Gadugi", 0, 12)); // NOI18N
         txtCod.setToolTipText("Inserir o código");
 
         txtNome.setFont(new java.awt.Font("Gadugi", 0, 12)); // NOI18N
         txtNome.setToolTipText("Inserir o nome");
 
-        txtDataNasc.setFont(new java.awt.Font("Gadugi", 0, 12)); // NOI18N
-        txtDataNasc.setToolTipText("Inserir a data de nascimento");
-
         txtGen.setFont(new java.awt.Font("Gadugi", 0, 12)); // NOI18N
         txtGen.setToolTipText("Inserir o gênero ");
 
         txtEndereco.setFont(new java.awt.Font("Gadugi", 0, 12)); // NOI18N
         txtEndereco.setToolTipText("Inserir o endereço");
-
-        txtTel.setFont(new java.awt.Font("Gadugi", 0, 12)); // NOI18N
-        txtTel.setToolTipText("Inserir o telefone");
-
-        txtEmail.setFont(new java.awt.Font("Gadugi", 0, 12)); // NOI18N
-        txtEmail.setToolTipText("Inserir e-mail");
-
-        txtVHA.setFont(new java.awt.Font("Gadugi", 0, 12)); // NOI18N
-        txtVHA.setToolTipText("Insira o valor hora/aula");
-
-        txtDataCon.setFont(new java.awt.Font("Gadugi", 0, 12)); // NOI18N
-        txtDataCon.setToolTipText("Inserir a data de contratação");
 
         PrimeiroRegistro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Emey87-Trainee-Player-rew.48.png"))); // NOI18N
         PrimeiroRegistro.setToolTipText("Ir para o primeiro registro");
@@ -353,6 +339,16 @@ public class Professor extends javax.swing.JFrame {
             }
         });
 
+        txtDataNasc.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("y-MM-dd"))));
+
+        try {
+            txtTel.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) #####-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
+        txtDataCon.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("y-MM-dd"))));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -370,11 +366,11 @@ public class Professor extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(prof_image, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(45, 45, 45)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(txtCod, javax.swing.GroupLayout.PREFERRED_SIZE, 621, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(txtCod))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(nome_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
@@ -382,7 +378,7 @@ public class Professor extends javax.swing.JFrame {
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(datanasc_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txtDataNasc, javax.swing.GroupLayout.PREFERRED_SIZE, 531, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(txtDataNasc))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
@@ -394,19 +390,20 @@ public class Professor extends javax.swing.JFrame {
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txtTel, javax.swing.GroupLayout.PREFERRED_SIZE, 610, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 625, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel8)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(txtVHA, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txtDataCon, javax.swing.GroupLayout.PREFERRED_SIZE, 531, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addComponent(txtTel))
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(txtEmail))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                            .addComponent(jLabel8)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(txtVHA))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(txtDataCon, javax.swing.GroupLayout.PREFERRED_SIZE, 530, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                     .addGap(36, 36, 36)
@@ -453,7 +450,7 @@ public class Professor extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(datanasc_lbl)
                             .addComponent(txtDataNasc, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(14, 14, 14)
+                        .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
                             .addComponent(txtGen, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -472,7 +469,7 @@ public class Professor extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(16, 16, 16)
+                .addGap(24, 24, 24)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(txtVHA, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -480,19 +477,19 @@ public class Professor extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
                     .addComponent(txtDataCon, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(save_btn)
-                    .addComponent(Delete_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(edit_btn)
                     .addComponent(criar_btn)
                     .addComponent(VoltarUmRegistro)
                     .addComponent(ProximoRegistro)
                     .addComponent(UltimoRegistro)
-                    .addComponent(PrimeiroRegistro))
-                .addGap(34, 34, 34)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(39, Short.MAX_VALUE))
+                    .addComponent(PrimeiroRegistro)
+                    .addComponent(Delete_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -503,7 +500,7 @@ public class Professor extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -644,7 +641,7 @@ public class Professor extends javax.swing.JFrame {
     private void save_btnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_save_btnMouseClicked
         
         //Criando strings para armazenar os dados digitados nos campos de texto
-        String codigo = txtCod.getText();
+        //String codigo = txtCod.getText();
         String nome = txtNome.getText();
         String datanasc = txtDataNasc.getText();
         String genero = txtGen.getText();
@@ -657,8 +654,8 @@ public class Professor extends javax.swing.JFrame {
         //
         try{
             
-            String insert_sql = "insert into professor (IdProfessor, NomeProf, PDataNasc, PGenero, PEndereco, PTelefone, ProfEmail, ValorHoraAula, DataContrato) values ('" + 
-            codigo + "', '" + nome + "', '" + datanasc + "', '" + genero + "', '" + endereco + "', '" + telefone + "', '" + email + "', '" + valorha + "', '" + datacon + "')";
+            String insert_sql = "insert into professor (NomeProf, PDataNasc, PGenero, PEndereco, PTelefone, ProfEmail, ValorHoraAula, DataContrato) values ('" + nome 
+                    + "', '" + datanasc + "', '" + genero + "', '" + endereco + "', '" + telefone + "', '" + email + "', '" + valorha + "', '" + datacon + "')";
             con_cliente.statement.executeUpdate(insert_sql);
             JOptionPane.showMessageDialog(null, "Gravação realizada com sucesso!", "Mensagem do programa", JOptionPane.INFORMATION_MESSAGE);
             con_cliente.executaSQL("select * from professor order by IdProfessor");
@@ -807,13 +804,13 @@ public class Professor extends javax.swing.JFrame {
     private javax.swing.JTable professor;
     private javax.swing.JLabel save_btn;
     private javax.swing.JTextField txtCod;
-    private javax.swing.JTextField txtDataCon;
-    private javax.swing.JTextField txtDataNasc;
+    private javax.swing.JFormattedTextField txtDataCon;
+    private javax.swing.JFormattedTextField txtDataNasc;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtEndereco;
     private javax.swing.JTextField txtGen;
     private javax.swing.JTextField txtNome;
-    private javax.swing.JTextField txtTel;
+    private javax.swing.JFormattedTextField txtTel;
     private javax.swing.JTextField txtVHA;
     // End of variables declaration//GEN-END:variables
 }
