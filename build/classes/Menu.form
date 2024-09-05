@@ -31,12 +31,15 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" alignment="0" pref="577" max="32767" attributes="0"/>
+          <Component id="jPanel1" min="-2" pref="537" max="-2" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -51,48 +54,30 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel2" min="-2" pref="37" max="-2" attributes="0"/>
-                              <Component id="jLabel1" max="32767" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="subt_lbl" min="-2" pref="561" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
-                  <Component id="alunobtn" min="-2" pref="134" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="129" max="-2" attributes="0"/>
-                  <Component id="profbtn" min="-2" pref="149" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="0" attributes="0">
+              <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
-                          <Component id="aluno_lbl" min="-2" pref="134" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="turmabtn" min="-2" pref="150" max="-2" attributes="0"/>
-                              <Component id="turma_lbl" min="-2" pref="150" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                                  <Component id="jLabel2" min="-2" pref="37" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="subt_lbl" min="-2" pref="523" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
+                      <Component id="jLabel1" alignment="1" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="112" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="205" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="cursobtn" min="-2" pref="156" max="-2" attributes="0"/>
-                      <Component id="prof_lbl" min="-2" pref="149" max="-2" attributes="0"/>
-                      <Component id="curso_lbl" min="-2" pref="156" max="-2" attributes="0"/>
+                      <Component id="aluno_lbl" min="-2" pref="134" max="-2" attributes="0"/>
+                      <Component id="alunobtn" min="-2" pref="134" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
@@ -104,34 +89,14 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="subt_lbl" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="alunobtn" min="-2" pref="153" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="prof_lbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="aluno_lbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Component id="profbtn" alignment="0" min="-2" pref="153" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="cursobtn" min="-2" pref="157" max="-2" attributes="0"/>
-                      </Group>
-                      <Component id="turmabtn" min="-2" pref="157" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="curso_lbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="turma_lbl" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace pref="69" max="32767" attributes="0"/>
+                  <Component id="subt_lbl" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+                  <Component id="alunobtn" min="-2" pref="153" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="aluno_lbl" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="121" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -155,7 +120,7 @@
               <Color blue="66" green="66" red="66" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="Selecione uma das op&#xe7;&#xf5;es a seguir:"/>
+            <Property name="text" type="java.lang.String" value="Selecione a op&#xe7;&#xe3;o a seguir:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="aluno_lbl">
@@ -165,33 +130,6 @@
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="Aluno"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="prof_lbl">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Gadugi" size="18" style="1"/>
-            </Property>
-            <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="Professor"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="turma_lbl">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Gadugi" size="18" style="1"/>
-            </Property>
-            <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="Turma"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="curso_lbl">
-          <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Gadugi" size="18" style="1"/>
-            </Property>
-            <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="Curso"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
@@ -220,45 +158,6 @@
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="alunobtnMouseClicked"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JLabel" name="profbtn">
-          <Properties>
-            <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Images/teacher.png"/>
-            </Property>
-          </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="profbtnMouseClicked"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JLabel" name="turmabtn">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Images/chalkboard.png"/>
-            </Property>
-          </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="turmabtnMouseClicked"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JLabel" name="cursobtn">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Images/online-education.png"/>
-            </Property>
-          </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="cursobtnMouseClicked"/>
           </Events>
         </Component>
       </SubComponents>

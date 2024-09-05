@@ -299,8 +299,6 @@ public class Aluno extends javax.swing.JFrame {
         cod_lbl.setFont(new java.awt.Font("Gadugi", 1, 16)); // NOI18N
         cod_lbl.setText("Código: ");
 
-        txtCod.setEditable(false);
-
         try {
             txtTel.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##) #####-####")));
         } catch (java.text.ParseException ex) {
@@ -488,6 +486,7 @@ public class Aluno extends javax.swing.JFrame {
     private void save_btnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_save_btnMouseClicked
 
         //Criando strings para armazenar os dados digitados nos campos de texto
+        String codigo = txtCod.getText();
         String nome = txtNome.getText();
         String datanasc = txtDataNasc.getText();
         String genero = txtGen.getText();
@@ -498,7 +497,7 @@ public class Aluno extends javax.swing.JFrame {
         //
         try{
 
-            String insert_sql = "insert into aluno (NomeAluno, DataNasc, Genero, Endereco, Telefone, DataMatricula) values ('"+ nome + "', "
+            String insert_sql = "insert into aluno (IdAluno, NomeAluno, DataNasc, Genero, Endereco, Telefone, DataMatricula) values ('" + codigo +"','"+ nome + "', "
             + "'" + datanasc + "', '" + genero + "', '" + endereco + "', '" + telefone + "', '" + matricula + "')";
             con_cliente.statement.executeUpdate(insert_sql);
             JOptionPane.showMessageDialog(null, "Gravação realizada com sucesso!", "Mensagem do programa", JOptionPane.INFORMATION_MESSAGE);
@@ -569,7 +568,7 @@ public class Aluno extends javax.swing.JFrame {
         private void saveActionPerformed(java.awt.event.ActionEvent evt) {
 
             //Criando strings para armazenar os dados digitados nos campos de texto
-            //String codigo = txtCod.getText();
+            String codigo = txtCod.getText();
             String nome = txtNome.getText();
             String datanasc = txtDataNasc.getText();
             String genero = txtGen.getText();
@@ -581,8 +580,8 @@ public class Aluno extends javax.swing.JFrame {
             try{
 
                 // Removendo IdAluno, '" + codigo + "',
-                String insert_sql = "insert into aluno (NomeAluno, DataNasc, Genero, Endereco, Telefone, DataMatricula) values ('" + nome + "', '" +
-                datanasc + "', '" + genero + "', '" + endereco + "', '" + telefone + "', '" + matricula + "')";
+                String insert_sql = "insert into aluno (IdAluno, NomeAluno, DataNasc, Genero, Endereco, Telefone, DataMatricula) values ('"+ codigo 
+                        +"','" + nome + "', '" +datanasc + "', '" + genero + "', '" + endereco + "', '" + telefone + "', '" + matricula + "')";
                 con_cliente.statement.executeUpdate(insert_sql);
                 JOptionPane.showMessageDialog(null, "Gravação realizada com sucesso!", "Mensagem do programa", JOptionPane.INFORMATION_MESSAGE);
                 con_cliente.executaSQL("select * from aluno order by IdAluno");
@@ -602,7 +601,7 @@ public class Aluno extends javax.swing.JFrame {
     private void create_btnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_create_btnMouseClicked
 
         //Limpa as caixas de texto
-        txtCod.setText(null);
+        txtCod.setText("");
         txtNome.setText("");
         txtDataNasc.setText("");
         txtGen.setText("");

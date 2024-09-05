@@ -30,14 +30,8 @@ public class Menu extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         subt_lbl = new javax.swing.JLabel();
         aluno_lbl = new javax.swing.JLabel();
-        prof_lbl = new javax.swing.JLabel();
-        turma_lbl = new javax.swing.JLabel();
-        curso_lbl = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         alunobtn = new javax.swing.JLabel();
-        profbtn = new javax.swing.JLabel();
-        turmabtn = new javax.swing.JLabel();
-        cursobtn = new javax.swing.JLabel();
 
         jLabel3.setText("jLabel3");
 
@@ -53,23 +47,11 @@ public class Menu extends javax.swing.JFrame {
         subt_lbl.setFont(new java.awt.Font("Gadugi", 0, 18)); // NOI18N
         subt_lbl.setForeground(new java.awt.Color(102, 102, 102));
         subt_lbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        subt_lbl.setText("Selecione uma das opções a seguir:");
+        subt_lbl.setText("Selecione a opção a seguir:");
 
         aluno_lbl.setFont(new java.awt.Font("Gadugi", 1, 18)); // NOI18N
         aluno_lbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         aluno_lbl.setText("Aluno");
-
-        prof_lbl.setFont(new java.awt.Font("Gadugi", 1, 18)); // NOI18N
-        prof_lbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        prof_lbl.setText("Professor");
-
-        turma_lbl.setFont(new java.awt.Font("Gadugi", 1, 18)); // NOI18N
-        turma_lbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        turma_lbl.setText("Turma");
-
-        curso_lbl.setFont(new java.awt.Font("Gadugi", 1, 18)); // NOI18N
-        curso_lbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        curso_lbl.setText("Curso");
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Fasticon-Essential-Toolbar-Undo.32.png"))); // NOI18N
@@ -89,68 +71,28 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        profbtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        profbtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/teacher.png"))); // NOI18N
-        profbtn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                profbtnMouseClicked(evt);
-            }
-        });
-
-        turmabtn.setBackground(new java.awt.Color(255, 255, 255));
-        turmabtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        turmabtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/chalkboard.png"))); // NOI18N
-        turmabtn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                turmabtnMouseClicked(evt);
-            }
-        });
-
-        cursobtn.setBackground(new java.awt.Color(255, 255, 255));
-        cursobtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        cursobtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/online-education.png"))); // NOI18N
-        cursobtn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                cursobtnMouseClicked(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(subt_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 561, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(85, 85, 85))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(78, 78, 78)
-                .addComponent(alunobtn, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(129, 129, 129)
-                .addComponent(profbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(78, 78, 78)
-                        .addComponent(aluno_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(72, 72, 72)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(turmabtn, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(turma_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(112, 112, 112)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(12, 12, 12)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(subt_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 523, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(205, 205, 205)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(cursobtn, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(prof_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(curso_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(aluno_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(alunobtn, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -159,39 +101,27 @@ public class Menu extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(subt_lbl)
-                        .addGap(70, 70, 70)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(alunobtn, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(prof_lbl)
-                                    .addComponent(aluno_lbl)))
-                            .addComponent(profbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addComponent(cursobtn, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(turmabtn, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(curso_lbl)
-                    .addComponent(turma_lbl))
-                .addContainerGap(69, Short.MAX_VALUE))
+                .addComponent(subt_lbl)
+                .addGap(64, 64, 64)
+                .addComponent(alunobtn, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(aluno_lbl)
+                .addContainerGap(121, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 577, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 537, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -215,33 +145,6 @@ public class Menu extends javax.swing.JFrame {
         dispose();
         
     }//GEN-LAST:event_alunobtnMouseClicked
-
-    private void profbtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_profbtnMouseClicked
-        
-        //Abrir a tela do professor e fechar a tela de menu.
-        Professor prof = new Professor();
-        prof.setVisible(true);
-        dispose();
-        
-    }//GEN-LAST:event_profbtnMouseClicked
-
-    private void turmabtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_turmabtnMouseClicked
-        
-        //Abrir a tela da turma e fechar a tela de menu.
-        Turma turma = new Turma();
-        turma.setVisible(true);
-        dispose();
-        
-    }//GEN-LAST:event_turmabtnMouseClicked
-
-    private void cursobtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cursobtnMouseClicked
-        
-        //Abrir a tela do curso e fechar a tela de menu.
-        Curso curso = new Curso();
-        curso.setVisible(true);
-        dispose();
-        
-    }//GEN-LAST:event_cursobtnMouseClicked
 
     /**
      * @param args the command line arguments
@@ -281,16 +184,10 @@ public class Menu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel aluno_lbl;
     private javax.swing.JLabel alunobtn;
-    private javax.swing.JLabel curso_lbl;
-    private javax.swing.JLabel cursobtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel prof_lbl;
-    private javax.swing.JLabel profbtn;
     private javax.swing.JLabel subt_lbl;
-    private javax.swing.JLabel turma_lbl;
-    private javax.swing.JLabel turmabtn;
     // End of variables declaration//GEN-END:variables
 }
