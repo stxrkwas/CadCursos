@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 02-Dez-2023 às 02:15
--- Versão do servidor: 10.4.27-MariaDB
--- versão do PHP: 8.2.0
+-- Tempo de geração: 05-Set-2024 às 13:55
+-- Versão do servidor: 10.4.22-MariaDB
+-- versão do PHP: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -17,8 +17,9 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
-CREATE DATABASE newcadcursos;
-USE newcadcursos;
+--
+-- Banco de dados: `newcadcursos`
+--
 
 -- --------------------------------------------------------
 
@@ -34,14 +35,17 @@ CREATE TABLE `aluno` (
   `Endereco` varchar(255) NOT NULL,
   `Telefone` varchar(15) NOT NULL,
   `DataMatricula` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `aluno`
 --
 
 INSERT INTO `aluno` (`IdAluno`, `NomeAluno`, `DataNasc`, `Genero`, `Endereco`, `Telefone`, `DataMatricula`) VALUES
-(1, 'Carlos Alberto', '01/01/1979', 'Masculino', 'Av. Águia de Haia, 001', '91111-1111', '02/02/2022');
+(1, 'Carlos Alberto', '01/01/1979', 'Masculino', 'Av. Águia de Haia, 001', '91111-1111', '02/02/2022'),
+(2, 'Maria Luiza Passo Silva', '11/02/2007', 'Feminino', 'Rua Domingues, 350', '(11) 90219-9291', '20/05/2020'),
+(3, 'Matheus Lima', '05/10/2005', 'Masculino', 'Av. dos Bandeirantes, 790', '(19) 90192-0101', '09/08/2021'),
+(4, 'Tatiante Guzman', '27/07/2006', 'Feminino', 'Travessa dos Ladrilihos, 372', '(11) 98229-3321', '02/06/2022');
 
 -- --------------------------------------------------------
 
@@ -57,7 +61,7 @@ CREATE TABLE `curso` (
   `DataTermino` varchar(10) NOT NULL,
   `CargaHoraria` varchar(10) NOT NULL,
   `Preco` varchar(15) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -75,7 +79,7 @@ CREATE TABLE `professor` (
   `ProfEmail` varchar(255) NOT NULL,
   `ValorHoraAula` varchar(10) NOT NULL,
   `DataContrato` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -86,7 +90,7 @@ CREATE TABLE `professor` (
 CREATE TABLE `tblusuario` (
   `usuario` varchar(25) NOT NULL,
   `senha` varchar(12) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `tblusuario`
@@ -112,7 +116,7 @@ CREATE TABLE `turma` (
   `IdProfessor` int(11) NOT NULL,
   `IdAluno` int(11) NOT NULL,
   `IdCurso` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Índices para tabelas despejadas
