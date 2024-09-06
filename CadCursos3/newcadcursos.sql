@@ -20,9 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `newcadcursos`
 --
-CREATE DATABASE NewCadCursos;
+CREATE DATABASE `NewCadCursos`;
 -- --------------------------------------------------------
-
 --
 -- Estrutura da tabela `aluno`
 --
