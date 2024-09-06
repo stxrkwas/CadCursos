@@ -20,8 +20,8 @@ public class Conexao {
     final private String senha = "";
     
     public Connection conexao;
-     public Statement statement;
-     public ResultSet resultset;
+    public Statement statement;
+    public ResultSet resultset;
      
     public boolean conecta(){
         boolean result = true;
